@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- pojo和表的映射 -->
+	<!-- class描述实体类与表的关系 -->
+	<class name="model.User" table="USER">
+	<!-- id 标签：对象的OID，主要和数据库的主键进行映射 -->
+		<id name="id" column="ID">
+			<!-- 数据库主键生成策略 -->
+			<!-- assigned：手动指定；
+			increment:表示使用数据库自增，hibernate产生的自增主键
+			identity :表示使用数据库自增，数据库产生主键自增
+			auto：自动判断适用的主键策略
+			-->
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name" column="NAME"></property>
+		<property name="password" column="PASS"></property>
+	</class>
+
+</hibernate-mapping>
